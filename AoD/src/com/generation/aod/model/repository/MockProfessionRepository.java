@@ -41,7 +41,7 @@ public class MockProfessionRepository implements ProfessionRepository
 		List<Profession> res = new ArrayList<Profession>();
 		for(Profession p:content)
 			if(p.getLevel()==level)
-				content.add(p);
+				res.add(p);
 		
 		return res;
 	}

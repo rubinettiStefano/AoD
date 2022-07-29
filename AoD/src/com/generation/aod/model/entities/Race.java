@@ -129,6 +129,19 @@ public class Race extends Entity
 
 		
 	}
+
+
+	public String getRandomName(String gender)
+	{
+		String[] malenames = malenamescsv.split(",");
+		String[] femalenames = femalenamescsv.split(",");
+		
+		return	gender.equals("M")											?
+				malenames[(int)(Math.random() * malenames.length)]			:
+				femalenames[(int)(Math.random() * femalenames.length)]		;
+							
+		
+	}
 	
 	
 	

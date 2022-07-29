@@ -74,7 +74,6 @@ public class Profession extends Entity
 		this.maxsalary = maxsalary;
 	}
 
-
 	@Override
 	public boolean isValid()
 	{

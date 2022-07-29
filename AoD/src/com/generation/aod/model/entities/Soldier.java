@@ -29,6 +29,22 @@ public class Soldier extends Entity
 
 	public Soldier() {}
 
+	
+	public String getGender()
+	{
+		return gender;
+	}
+
+	public void setGender(String gender)
+	{
+		this.gender = gender;
+	}
+
+	public void setRandomGender()
+	{
+		setGender(Math.random() > 0.5 ? "M" : "F");
+	}
+	
 	public String getName()
 	{
 		return name;
@@ -123,6 +139,65 @@ public class Soldier extends Entity
 				.replace("[salary]", salary+"")
 				.replace("[raceid]", race.getId()+"")
 				.replace("[professionid]", profession.getId()+"");
+	}
+	
+	public void setRandomSalary()
+	{
+		if(profession==null)
+			throw new RuntimeException("Profession unknown. Cannot generate salary");
+		salary = profession.getRandomSalary();
+	}
+
+	public void setRandomAge() 
+	{
+		if(race==null)
+			throw new RuntimeException("Race unknown. Cannot generate age");
+		
+		age = ((int)(Math.random()*((race.getMaxage()*0.75) - 18)) +18);
+		
+	}
+
+	
+	public void setRandomName()
+	{
+		if(race==null)
+			throw new RuntimeException("Race unknown. Cannot generate name");
+		if(gender==null)
+			throw new RuntimeException("Gender unknown. Cannot generate name");
+		
+		setName(race.getRandomName(gender));
+		
+	}
+
+	public void setRandomWeight()
+	{
+		if(race==null)
+			throw new RuntimeException("Race unknown. Cannot generate weight");
+		// metodo inefficiente ma più facile da seguire con la logica
+		int delta =  (int)(race.getAverageweight() *0.2 *Math.random());
+		
+		setWeight
+		(
+				Math.random() >0.5 			  ?
+				race.getAverageweight()+delta :
+				race.getAverageweight()-delta 	
+		);
+	}
+
+	public void setRandomHeight()
+	{
+		if(race==null)
+			throw new RuntimeException("Race unknown. Cannot generate height");
+		// metodo inefficiente ma più facile da seguire con la logica
+		int delta =  (int)(race.getAverageheight() *0.2 *Math.random());
+		
+		setHeight
+		(
+				Math.random() >0.5 			  ?
+				race.getAverageheight()+delta :
+				race.getAverageheight()-delta 	
+		);
+		
 	}
 	
 	
