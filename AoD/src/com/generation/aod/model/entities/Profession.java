@@ -99,7 +99,7 @@ public class Profession extends Entity
 	{
 		// TODO Auto-generated method stub
 		return 	("insert into Profession (id,name, description, minsalary, maxsalary, level)  " +
-				" values ([id], '[name]','[description]',[minsalary],[maxsalary], [level])")
+				" values ([id], '[name]','[description]',[minsalary],[maxsalary], [level]);")
 				.replace("[id]", id+"")
 				.replace("[name]", name)
 				.replace("[description]", description)
