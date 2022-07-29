@@ -20,6 +20,11 @@ public abstract class Entity
 	}
 	
 
+	public boolean isFull(String s)
+	{
+		return s!=null && !s.isEmpty();
+	}
+	
 	public abstract boolean isValid();
 	
 	public abstract String generateInsert();

@@ -9,10 +9,11 @@ package com.generation.aod.model.entities;
 public class Race extends Entity
 {
 	String name;
+	String description;	
+
 	int maxage;
 	int averageheight; // espresso in cm
 	int averageweight; // espressi in kg
-	String description;	
 	
 	
 	
